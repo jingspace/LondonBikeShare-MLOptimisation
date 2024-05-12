@@ -17,7 +17,7 @@ The model is based on XGBoost (Extreme Gradient Boosting), a decision-tree-based
 
 ## Performance
 
-The model's performance was evaluated using Root Mean Squared Logarithmic Error (RMSLE) on a held-out test set. This metric is chosen because it is less sensitive to outliers and penalizes under-prediction more than over-prediction, aligning with the goals of optimising bike availability. The final RMSLE achieved on the test set was [Insert RMSLE Value].
+The model's performance was evaluated using Root Mean Squared Logarithmic Error (RMSLE) on a held-out test set. This metric is chosen because it is less sensitive to outliers and penalizes under-prediction more than over-prediction, aligning with the goals of optimising bike availability. The final RMSLE achieved on the test set was 0.7000535564455026.
 
 ## Limitations
 

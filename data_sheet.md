@@ -10,7 +10,12 @@ The dataset comprises 776,527 instances, each representing a single bike journey
 
 The dataset appears to be complete, with no missing values in the core features used for analysis. It does not contain any personally identifiable information or other sensitive data. 
 
-Features:
+#### Data Features
+- Temporal Data: Start and end timestamps of trips, which are critical for identifying high-demand periods.
+- Spatial Data: Locations of start and end stations, which are used to analyse geographic demand and to optimize bike allocations.
+- Operational Metrics: Details such as bike IDs and trip durations, which help in assessing the usage intensity and maintenance needs of bikes.
+
+#### The dataset includes:
 - Number: A unique identifier for each trip (Trip ID).
 - Start Date: The date and time when the trip began.
 - Start Station Number: The identifier for the starting station.
@@ -30,6 +35,10 @@ TfL collected the data through the Cycle Hire system's automated tracking mechan
 ## Preprocessing/cleaning/labelling
 
 It is unclear whether the raw data was saved in addition to the processed data. The data used in the analysis underwent several preprocessing steps, including date/time conversion, feature extraction (day of the week, hour, duration in minutes), addition of cyclical features (hour_sin, hour_cos), outlier handling (capping of duration_minutes), one-hot encoding of categorical variables (start station, end station, day of the week), and splitting the data into training, validation, and test sets.
+
+#### Data preprocessing steps include:
+- Datetime Conversion: All date and time strings are converted into `datetime` objects to facilitate accurate and efficient temporal analysis.
+- Categorical Data Encoding: Station names and other categorical data are encoded using one-hot encoding to prepare them for use in machine learning models.
  
 ## Uses
 
@@ -44,3 +53,8 @@ The dataset is publicly available on the Transport for London (TfL) website and 
 ## Maintenance
 
 Transport for London (TfL) is the maintainer of the original dataset. The Kaggle version might not be actively updated.
+
+## Version History
+- Current Version: 1.2, updated as of May 12, 2024.
+- Version 1.1: Provided initial guidelines and descriptions of the dataset.
+- Version 1.2: Enhanced data preprocessing steps and introduced improved outlier management strategies.

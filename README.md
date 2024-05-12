@@ -23,6 +23,7 @@ We optimised several XGBoost hyperparameters using Bayesian Optimisation:
 ## Results
 #### Demand Prediction:  
 Our model identifies peak demand hours (weekday rush hours and weekends) and high-demand stations, informing where to allocate more bikes.
+![alt text](/Screenshots/result_1.png)
 #### Maintenance Prediction: 
 While our model doesn't directly predict maintenance, it lays the foundation for incorporating historical maintenance data to identify bikes that are likely to need repairs.
 #### Bike Model Analysis: 

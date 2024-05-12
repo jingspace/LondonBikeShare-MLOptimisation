@@ -1,43 +1,46 @@
-# Datasheet Template
-
-As far as you can, complete the model datasheet. If you have got the data from the internet, you may not have all the information you need, but make sure you include all the information you do have. 
+# Datasheet for London Bike Share Journey Analysis
 
 ## Motivation
 
-- For what purpose was the dataset created? 
-- Who created the dataset (e.g., which team, research group) and on behalf of which entity (e.g., company, institution, organization)? Who funded the creation of the dataset?
-
+The dataset was created by Transport for London (TfL) to provide a comprehensive view of bicycle journeys within the TfL Cycle Hire system, aiming to promote transparency and enable analysis of urban mobility patterns, station performance, and cycling preferences. The dataset was likely funded by TfL as part of their public data initiative.
  
 ## Composition
 
-- What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? 
-- How many instances of each type are there? 
-- Is there any missing data?
-- Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by    doctor–patient confidentiality, data that includes the content of individuals’ non-public communications)?
+The dataset comprises 776,527 instances, each representing a single bike journey taken in August 2023.  For each journey, the dataset records the unique trip ID, the start and end date and time, the start and end station IDs and names, the unique bike ID, the bike model, and the total duration of the trip in both human-readable format and milliseconds.
+
+The dataset appears to be complete, with no missing values in the core features used for analysis. It does not contain any personally identifiable information or other sensitive data. 
+
+Features:
+- Number: A unique identifier for each trip (Trip ID).
+- Start Date: The date and time when the trip began.
+- Start Station Number: The identifier for the starting station.
+- Start Station: The name of the starting station.
+- End Date: The date and time when the trip ended.
+- End Station Number: The identifier for the ending station.
+- End Station: The name of the ending station.
+- Bike Number: A unique identifier for the bicycle used.
+- Bike Model: The model of the bicycle used.
+- Total Duration: The total time duration of the trip (in a human-readable format).
+- Total Duration (ms): The total time duration of the trip in milliseconds.
 
 ## Collection process
 
-- How was the data acquired? 
-- If the data is a sample of a larger subset, what was the sampling strategy? 
-- Over what time frame was the data collected?
+TfL collected the data through the Cycle Hire system's automated tracking mechanisms. The dataset covers the entire month of August 2023 and represents the full population of bike journeys within the system during that period.
 
 ## Preprocessing/cleaning/labelling
 
-- Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section. 
-- Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? 
+It is unclear whether the raw data was saved in addition to the processed data. The data used in the analysis underwent several preprocessing steps, including date/time conversion, feature extraction (day of the week, hour, duration in minutes), addition of cyclical features (hour_sin, hour_cos), outlier handling (capping of duration_minutes), one-hot encoding of categorical variables (start station, end station, day of the week), and splitting the data into training, validation, and test sets.
  
 ## Uses
 
-- What other tasks could the dataset be used for? 
-- Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses? For example, is there anything that a dataset consumer might need to know to avoid uses that could result in unfair treatment of individuals or groups (e.g., stereotyping, quality of service issues) or other risks or harms (e.g., legal risks, financial harms)? If so, please provide a description. Is there anything a dataset consumer could do to mitigate these risks or harms? 
-- Are there tasks for which the dataset should not be used? If so, please provide a description.
+The primary uses of this dataset are demand prediction (to optimise bike allocation) and maintenance prediction (based on usage patterns). However, it can also be used for various other tasks, such as analysing the impact of weather or events on bike usage, evaluating the effectiveness of marketing campaigns or promotions, optimising bike paths and station locations, and studying transportation patterns within the city.
+
+The aggregated and anonymised nature of the dataset mitigates most ethical concerns. However, future users should be aware of potential biases if certain user demographics are underrepresented. This dataset should not be used for discriminatory purposes or to infer sensitive information about individuals or groups.
 
 ## Distribution
 
-- How has the dataset already been distributed? 
-- Is it subject to any copyright or other intellectual property (IP) license, and/or under applicable terms of use (ToU)?  
+The dataset is publicly available on the Transport for London (TfL) website and Kaggle. While the exact license is not specified, it is likely under a Creative Commons license, which allows for sharing and adaptation with attribution.
 
 ## Maintenance
 
-- Who maintains the dataset?
-
+Transport for London (TfL) is the maintainer of the original dataset. The Kaggle version might not be actively updated.
